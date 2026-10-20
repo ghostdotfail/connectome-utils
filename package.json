@@ -1,11 +1,16 @@
 {
   "name": "@ghostfail/connectome-utils",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
     "./types": "./src/types/index.ts",
-    "./archipelago": "./src/archipelago/index.ts"
+    "./archipelago": "./src/archipelago/index.ts",
+    "./extensions/assert": "./src/extensions/assert/index.ts"
+  },
+  "scripts": {
+    "build:ext": "bun build extensions/assert/index.ts --target bun --minify --outfile dist/assert-extension.js --define BUILD_SHA=\"'$(git describe --always --dirty)'\"",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "zod": "^4.3.6"
