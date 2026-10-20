@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "composite": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "types": ["@types/bun"],
+    "rootDir": ".",
+    "outDir": "./dist"
+  },
+  "include": [
+    "**/*.ts",
+  ],
+  "exclude": [
+    "dist/",
+    "node_modules/",
+  ],
+}
