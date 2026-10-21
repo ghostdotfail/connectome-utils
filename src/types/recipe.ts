@@ -1,6 +1,7 @@
 import type { RecipeAgent, Recipe } from '@animalabs/connectome-host/src/recipe';
 import { z } from 'zod';
 import { expectType } from '../lib/zod-utils';
+import { ExtensionConfigSchema } from './extension';
 
 export const RecipeStrategySchema = z.object({
   type: z.union([
@@ -219,7 +220,7 @@ export const RecipeModulesSchema = z.object({
 export const RecipeExtensionSchema = z.object({
   kind: z.enum(['strategy', 'module']),
   path: z.string(),
-  config: z.record(z.string(), z.unknown()).optional(),
+  config: ExtensionConfigSchema,
   source: z.record(z.string(), z.unknown()).optional(),
   sourceMeta: z.record(z.string(), z.unknown()).optional(),
 });
